@@ -136,7 +136,7 @@ if (isset($_POST['update'])) {
 		
 	}
 
-//recherche
+/*
 	if (isset($_POST['recherche'])) {
   $search=$_POST['search'];
   $stmt=$db->prepare("SELECT * FROM courrier_arrivé WHERE emetteur LIKE CONCAT('%',?,'%') OR objet LIKE CONCAT('%',?,'%') OR date_arrivée LIKE CONCAT('%',?,'%') OR nature LIKE CONCAT('%',?,'%')");
@@ -147,5 +147,5 @@ if (isset($_POST['update'])) {
   $results=$stmt->get_result(); 
   //header('recherchedep.php');
   
-}
+}*/
 ?>

@@ -24,6 +24,26 @@ if (isset($_GET['logout'])) {
 	<meta charset="utf-8">
  	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 	<title>LISTE DES COURRIERS</title>
+  <style>
+    .nav-item input{
+      position: relative;
+      float: right;
+      margin-left: 400px;
+      height: 50px;
+      display: flex;
+      cursor: pointer;
+      padding: 10px 20px;
+      background: #fff;
+      border-radius: 30px;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 600px;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
 
@@ -52,11 +72,6 @@ if (isset($_GET['logout'])) {
 					</li>
 				</ul>     
 			</div>
-			<!--form de recherche-->
-			<form class="form-inline" action="..\résultsearcharr.php" method="post">
-	          	<input class="form-control mr-sm-2" type="search" name="search" id="search_text" placeholder="Recherche" aria-label="Recherche">
-	         	<button class="btn btn-outline-success my-2 my-sm-0" name="recherche" type="submit">Recherche</button>
-	    	</form>
 		</nav>
 	<!--/menu1-->
 
@@ -66,10 +81,23 @@ if (isset($_GET['logout'])) {
     		<a class="nav-item nav-link active" href="..\admin\courrierarri.php">Courriers arrivés</a>
   		
     		<a class="nav-item nav-link" href="..\admin\courrierdep.php">courriers départs</a>
-  		
 	</nav>
 	
 	<!--menu2-->
+
+
+  
+  <!--Recherche box-->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+      <input id="search" type="text" onkeyup="myFunction()" placeholder="Rechercher un courrier">
+  </li>
+  </ul>
+</nav>
+<!--FIN Recherche box-->
+
+
 
 	<!--bodycourrierarrivé-->
 	<!-- ADD DATA -->
@@ -223,7 +251,6 @@ if (isset($_GET['logout'])) {
 				</button>
 				</div>
 			</div>
-
 			<div class="card">
 				<div class="card-body">
 				<?php 

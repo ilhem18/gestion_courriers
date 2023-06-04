@@ -138,7 +138,7 @@ if (isset($_POST['update'])) {
 		
 	}
 
-//recherche
+/*
 	if (isset($_POST['recherche'])) {
   $search=$_POST['search'];
   $stmt=$db->prepare("SELECT * FROM courrier_départ WHERE destinataire LIKE CONCAT('%',?,'%') OR objet LIKE CONCAT('%',?,'%') OR date_envoi LIKE CONCAT('%',?,'%') OR nature LIKE CONCAT('%',?,'%')");
@@ -150,7 +150,6 @@ if (isset($_POST['update'])) {
   //header('recherchedep.php');
   
 }
- //recherche lier
         if (isset($_POST['recherchelier'])) {
         $IDA= 0;
 		$nature= "";
@@ -193,10 +192,10 @@ if (isset($_POST['update'])) {
 	</tr>
 	 </tbody>
      
-    	"; */
+    	";
     }
 	}
 	echo $output;      
    }         
-
+*/
 ?>

@@ -24,6 +24,26 @@ if (isset($_GET['logout'])) {
 	<meta charset="utf-8">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 	<title>Courrier départ</title>
+  <style>
+    .nav-item input{
+      position: relative;
+      float: right;
+      margin-left: 400px;
+      height: 50px;
+      display: flex;
+      cursor: pointer;
+      padding: 10px 20px;
+      background: #fff;
+      border-radius: 30px;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 600px;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
  
@@ -47,11 +67,7 @@ if (isset($_GET['logout'])) {
           <li class="nav-item">
               <h3 class="nav-item text-secondary">Page du responsable</h3>  
           </li>
-        </ul>
-      <form class="form-inline" action="résultsearchdep.php" method="post">
-          <input class="form-control mr-sm-2" type="search" name="search" id="search_text" placeholder="Recherche" aria-label="Recherche">
-         <button class="btn btn-outline-success my-2 my-sm-0" name="recherche" type="submit">Recherche</button>
-      </form>        
+        </ul>       
       </div>
     </nav>
 <!--/menu-->
@@ -64,7 +80,15 @@ if (isset($_GET['logout'])) {
     <!--/menu2-->
 
          
- 
+ <!--Recherche box-->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+      <input id="search" type="text" onkeyup="myFunction()" placeholder="Rechercher un courrier">
+  </li>
+  </ul>
+</nav>
+<!--FIN Recherche box-->
 
 
  <!--body-->
