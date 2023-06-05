@@ -8,115 +8,88 @@ body {
 	font-size: 120%;
 	background: #F8F8FF;
 }
-.header {
-	width: 40%;
-	margin: 50px auto 0px;
-	color: white;
-	background: #5AC5A4;
-	text-align: center;
-	border: 1px solid #B0C4DE;
-	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
+.login-box {
+	width: 380px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #000;
+	background: #ffe4c4;
+	padding: 50px;
+	border-radius: 20px;
 }
-form, .content {
-	width: 40%;
-	margin: 0px auto;
-	padding: 20px;
-	border: 1px solid #B0C4DE;
-	background: white;
-	border-radius: 0px 0px 10px 10px;
+.login-box h2{
+	float: left;
+	font-size: 40px;
+	border-bottom: 6px solid rgb(0,33,71);
+	margin-bottom: 50px;
+	padding: 13px 0;
 }
-.input-group {
-	margin: 10px 0px 10px 0px;
+.textbox{
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid rgb(0,33,71);
 }
-.input-group label {
-	display: block;
-	text-align: left;
-	margin: 3px;
-}
-.input-group input {
-	height: 30px;
-	width: 93%;
-	padding: 5px 10px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
-}
-#user_type {
-	height: 40px;
-	width: 98%;
-	padding: 5px 10px;
-	background: white;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
+.textbox input{
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #000;
+	font-size: 18px;
+	width: 80%;
+	float: left;
+	margin: 0 10px;
 }
 .btn {
-	padding: 10px;
-	font-size: 15px;
-	color: white;
-	background: #5AC5A4;
-	border: none;
-	border-radius: 5px;
+	width: 100%;
+	background-color: transparent;
+	border: 2px solid rgb(0,33,71);
+	color: #000;
+	padding: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 30px;
+	margin: 20px 0;
 }
-.error {
-	width: 92%; 
-	margin: 0px auto; 
-	padding: 10px; 
-	border: 1px solid #a94442; 
-	color: #a94442; 
-	background: #f2dede; 
-	border-radius: 5px; 
-	text-align: left;
+.btn:hover{
+	background-color: rgb(0,33,71);
+	color: #fff;
+	transition: 0.5;
 }
-.success {
-	color: #3c763d; 
-	background: #dff0d8; 
-	border: 1px solid #3c763d;
-	margin-bottom: 20px;
-}
-.profile_info img {
-	display: inline-block; 
-	width: 50px; 
-	height: 50px; 
-	margin: 5px;
-}
-.profile_info div {
-	display: inline-block; 
-	margin: 5px;
-}
-.profile_info:after {
-	content: "";
-	display: block;
-	clear: both;
+.btn:active{
+	background-color: #fff;
+	color: rgb(0,33,71);
 }
 </style>
 	<title>Connexion</title>
 	<meta charset="utf-8">
 </head>
 <body>
-	<div class="header">
+	<div class="login-box">
 		<h2>Connexion</h2>
-	</div>
 	<form method="post" action="login.php">
 
 		<?php echo display_error(); ?>
 
-		<div class="input-group">
+		<div class="textbox">
 			<label>Nom d'utilisateur</label>
 			<input type="text" name="username" >
 		</div>
-		<div class="input-group">
+		<div class="textbox">
 			<label>Mot de passe</label>
 			<input type="password" name="password">
 		</div>
-		<div class="input-group">
+		
 			<button type="submit" class="btn" name="login_btn">Login</button>
-		</div>
+		
 		<!--<p>
 			créer un compte <a href="register.php">inscription</a>
 		</p>-->
 	</form>
+	</div>
 </body>
 </html>

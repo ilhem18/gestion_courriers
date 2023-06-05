@@ -11,93 +11,78 @@
 	<style type="text/css">
 * { margin: 0px; padding: 0px; }
 body {
-	font-size: 120%;
 	background: #F8F8FF;
 }
-.header {
-	width: 40%;
-	margin: 50px auto 0px;
-	color: white;
-	background: #5AC5A4;
+.inscription-box {
 	text-align: center;
-	border: 1px solid #B0C4DE;
-	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
+	width: 80%;
+	margin-top: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #000;
+	background: #ffe4c4;
+	padding: 50px;
+	border-radius: 20px;
 }
-form, .content {
-	width: 40%;
-	margin: 0px auto;
-	padding: 20px;
-	border: 1px solid #B0C4DE;
-	background: white;
-	border-radius: 0px 0px 10px 10px;
+.inscription-box h2{
+	font-size: 40px;
+	border-bottom: 6px solid rgb(0,33,71);
+	margin-bottom: 50px;
+	padding: 13px 0;
 }
-.input-group {
-	margin: 10px 0px 10px 0px;
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
-.input-group label {
-	display: block;
-	text-align: left;
-	margin: 3px;
+.textbox{
+	display: flex;
+  	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid rgb(0,33,71);
 }
-.input-group input {
-	height: 30px;
-	width: 93%;
-	padding: 5px 10px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
+.textbox input{
+	text-align: center;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #000;
+	font-size: 18px;
+	width: 80%;
+	float: left;
+	margin: 0 10px;
 }
-#level {
-	height: 40px;
-	width: 98%;
-	padding: 5px 10px;
-	background: white;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
+#level{
+	background-color:transparent;
+	color: #000;
 }
 .btn {
-	padding: 10px;
-	font-size: 15px;
-	color: white;
-	background: #5AC5A4;
-	border: none;
-	border-radius: 5px;
+	width: 50%;
+	background-color: transparent;
+	border: 2px solid rgb(0,33,71);
+	color: #000;
+	padding: 15px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 30px;
+	margin: 20px 0;
 }
-.error {
-	width: 92%; 
-	margin: 0px auto; 
-	padding: 10px; 
-	border: 1px solid #a94442; 
-	color: #a94442; 
-	background: #f2dede; 
-	border-radius: 5px; 
-	text-align: left;
+.btn:hover{
+	background-color: rgb(0,33,71);
+	color: #fff;
+	transition: 0.5;
 }
-.success {
-	color: #3c763d; 
-	background: #dff0d8; 
-	border: 1px solid #3c763d;
-	margin-bottom: 20px;
+.btn:active{
+	background-color: #fff;
+	color: rgb(0,33,71);
 }
-.profile_info img {
-	display: inline-block; 
-	width: 50px; 
-	height: 50px; 
-	margin: 5px;
-	float: left;
-}
-.profile_info div {
-	display: inline-block; 
-	margin: 5px;
-}
-.profile_info:after {
-	content: "";
-	display: block;
-	clear: both;
-}
+
 </style>
 </head>
 <body>
@@ -129,56 +114,55 @@ form, .content {
 	</div>
 </nav>
 <!--/menu-->
-	<div class="header">
+	<div class="inscription-box">
 		<h2>Ajouter un utilisateur</h2>
-	</div>
-<form method="post" action="create_user.php">
+	<form method="post" action="create_user.php">
 
-	<?php echo display_error(); ?>
-
-	<div class="input-group">
-		<label>Nom</label>
-		<input type="text" name="nom" value="<?php echo $nom; ?>">
-	</div>
-	<div class="input-group">
-		<label>Prénom</label>
-		<input type="text" name="prenom" value="<?php echo $prenom; ?>">
-	</div>
-	<div class="input-group">
-		<label>date de naissance</label>
-		<input type="date" name="date_naissance" value="<?php echo $date_naissance; ?>">
-	</div>
-	<div class="input-group">
-		<label>date d'embauche</label>
-		<input type="date" name="date_embauche" value="<?php echo $date_embauche; ?>">
-	</div>
-	<div class="input-group">
-		<label>numéro de téléphone</label>
-		<input type="text" name="num_tel" value="<?php echo $num_tel; ?>">
-	</div>
-	<div class="input-group">
-		<label>Username</label>
-		<input type="text" name="username" value="<?php echo $username; ?>">
-	</div>
-	<div class="input-group">
-		<label>type d'utilisateur</label>
+			<?php echo display_error(); ?>
+	<div class="register-form">
+		<div class="textbox">
+			<label>Nom</label>
+			<input type="text" name="nom" value="<?php echo $nom; ?>">
+		</div>
+		<div class="textbox">
+			<label>Prénom</label>
+			<input type="text" name="prenom" value="<?php echo $prenom; ?>">
+		</div>
+		<div class="textbox">
+			<label>date de naissance</label>
+			<input type="date" name="date_naissance" value="<?php echo $date_naissance; ?>">
+		</div>
+		<div class="textbox">
+			<label>date d'embauche</label>
+			<input type="date" name="date_embauche" value="<?php echo $date_embauche; ?>">
+		</div>
+		<div class="textbox">
+			<label>numéro de téléphone</label>
+			<input type="text" name="num_tel" value="<?php echo $num_tel; ?>">
+		</div>
+		<div class="textbox">
+			<label>Username</label>
+			<input type="text" name="username" value="<?php echo $username; ?>">
+		</div>
+		<div class="textbox">
+			<label>type d'utilisateur</label>
 			<select name="level" id="level" >
 				<option value=""></option>
 				<option value="responsable">Responsable du courrier</option>
 				<option value="user">personnel</option>
 			</select>
+		</div>
+		<div class="textbox">
+			<label>mot de passe</label>
+			<input type="password" name="password_1">
+		</div>
+		<div class="textbox">
+			<label>Confirmer mot de passe</label>
+			<input type="password" name="password_2">
+		</div>
 	</div>
-	<div class="input-group">
-		<label>mot de passe</label>
-		<input type="password" name="password_1">
-	</div>
-	<div class="input-group">
-		<label>Confirmer mot de passe</label>
-		<input type="password" name="password_2">
-	</div>
-	<div class="input-group">
 		<button type="submit" class="btn" name="register_btn"> ajouter un utilisateur</button>
-	</div>
 	</form>
+	</div>
 </body>
 </html>
